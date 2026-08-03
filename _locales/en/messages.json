@@ -1,0 +1,203 @@
+{
+  "extensionName": {
+    "message": "Headers"
+  },
+  "extensionDescription": {
+    "message": "Switch between isolated environments and override request headers for development."
+  },
+  "globalEnabled": {
+    "message": "Enable globally"
+  },
+  "environmentSpaces": {
+    "message": "Environments"
+  },
+  "addEnvironment": {
+    "message": "Add environment"
+  },
+  "addHeader": {
+    "message": "Add Header"
+  },
+  "openSettings": {
+    "message": "Open settings"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "back": {
+    "message": "Back"
+  },
+  "appliesToAllEnvironments": {
+    "message": "· Applies to all environments"
+  },
+  "saved": {
+    "message": "Saved"
+  },
+  "predefinedHeaderKeys": {
+    "message": "Predefined Header Keys"
+  },
+  "manualKeyHint": {
+    "message": "· You can still enter any other key"
+  },
+  "addKey": {
+    "message": "＋ Add key"
+  },
+  "appearance": {
+    "message": "Appearance"
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeSystem": {
+    "message": "System"
+  },
+  "themeLight": {
+    "message": "Light"
+  },
+  "themeDark": {
+    "message": "Dark"
+  },
+  "font": {
+    "message": "Font"
+  },
+  "ignoredRequestDomains": {
+    "message": "Ignored request domains"
+  },
+  "wildcardHint": {
+    "message": "· Supports * wildcards"
+  },
+  "addIgnoredDomain": {
+    "message": "＋ Add ignored domain"
+  },
+  "activeSpaceStatus": {
+    "message": "$SPACE$ is active",
+    "placeholders": {
+      "space": {
+        "content": "$1",
+        "example": "Feature A"
+      }
+    }
+  },
+  "rulesPaused": {
+    "message": "All Header rules are paused"
+  },
+  "deleteSpace": {
+    "message": "Delete $SPACE$",
+    "placeholders": {
+      "space": {
+        "content": "$1",
+        "example": "Feature A"
+      }
+    }
+  },
+  "renameSpace": {
+    "message": "Rename $SPACE$",
+    "placeholders": {
+      "space": {
+        "content": "$1",
+        "example": "Feature A"
+      }
+    }
+  },
+  "spaceName": {
+    "message": "Environment name"
+  },
+  "newSpaceName": {
+    "message": "New environment name"
+  },
+  "headerSettingsForSpace": {
+    "message": "$SPACE$ Header settings",
+    "placeholders": {
+      "space": {
+        "content": "$1",
+        "example": "Feature A"
+      }
+    }
+  },
+  "noHeaders": {
+    "message": "No Headers in this environment"
+  },
+  "enableHeader": {
+    "message": "Enable $HEADER$",
+    "placeholders": {
+      "header": {
+        "content": "$1",
+        "example": "x-tt-env"
+      }
+    }
+  },
+  "header": {
+    "message": "Header"
+  },
+  "headerKey": {
+    "message": "Header Key"
+  },
+  "choosePredefinedHeaderKey": {
+    "message": "Choose a predefined Header Key"
+  },
+  "headerValue": {
+    "message": "Header Value"
+  },
+  "deleteHeader": {
+    "message": "Delete $HEADER$",
+    "placeholders": {
+      "header": {
+        "content": "$1",
+        "example": "x-tt-env"
+      }
+    }
+  },
+  "ignoredDomainExample": {
+    "message": "e.g. *.example.com"
+  },
+  "deleteItem": {
+    "message": "Delete $ITEM$",
+    "placeholders": {
+      "item": {
+        "content": "$1",
+        "example": "*.example.com"
+      }
+    }
+  },
+  "saving": {
+    "message": "Saving"
+  },
+  "rulesApplyFailed": {
+    "message": "Failed to apply rules"
+  },
+  "applyFailed": {
+    "message": "Apply failed"
+  },
+  "invalidHeaderKey": {
+    "message": "Invalid Header Key: $KEY$",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "invalid key"
+      }
+    }
+  },
+  "duplicateHeaderKey": {
+    "message": "Duplicate Header Key: $KEY$",
+    "placeholders": {
+      "key": {
+        "content": "$1",
+        "example": "x-tt-env"
+      }
+    }
+  },
+  "invalidIgnoredDomain": {
+    "message": "Invalid ignored domain: $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "*.example.com"
+      }
+    }
+  },
+  "defaultSpaceDaily": {
+    "message": "Daily"
+  },
+  "unnamedSpace": {
+    "message": "Unnamed environment"
+  }
+}

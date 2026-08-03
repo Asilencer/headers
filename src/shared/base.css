@@ -1,0 +1,244 @@
+:root {
+  color-scheme: light;
+  --app-font: "ComicShannsMono Nerd Font", "Hannotate SC", ui-monospace, monospace;
+  --background: #f4f5f7;
+  --surface: #ffffff;
+  --surface-muted: #f0f1f3;
+  --surface-hover: #e8eaed;
+  --tab-color-1: #dcecff;
+  --tab-color-2: #dff3e8;
+  --tab-color-3: #f7ebc8;
+  --tab-color-4: #f5dfea;
+  --tab-color-5: #e8e0f7;
+  --tab-color-6: #d9f0f0;
+  --text: #17191c;
+  --text-muted: #73777f;
+  --border: #dfe1e5;
+  --primary: #16181b;
+  --primary-text: #ffffff;
+  --accent: #5ea8ff;
+  --danger: #d84646;
+  --shadow: 0 16px 42px rgba(20, 23, 28, 0.12);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #171819;
+  --surface: #222324;
+  --surface-muted: #343536;
+  --surface-hover: #3d3e40;
+  --tab-color-1: #304965;
+  --tab-color-2: #2f4b3b;
+  --tab-color-3: #514626;
+  --tab-color-4: #513849;
+  --tab-color-5: #443a5c;
+  --tab-color-6: #294b4c;
+  --text: #f4f4f5;
+  --text-muted: #a0a2a7;
+  --border: #3b3d40;
+  --primary: #f7f7f8;
+  --primary-text: #171819;
+  --accent: #69b2ff;
+  --danger: #ff7272;
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] {
+    color-scheme: dark;
+    --background: #171819;
+    --surface: #222324;
+    --surface-muted: #343536;
+    --surface-hover: #3d3e40;
+    --tab-color-1: #304965;
+    --tab-color-2: #2f4b3b;
+    --tab-color-3: #514626;
+    --tab-color-4: #513849;
+    --tab-color-5: #443a5c;
+    --tab-color-6: #294b4c;
+    --text: #f4f4f5;
+    --text-muted: #a0a2a7;
+    --border: #3b3d40;
+    --primary: #f7f7f8;
+    --primary-text: #171819;
+    --accent: #69b2ff;
+    --danger: #ff7272;
+    --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select {
+  font-family: var(--app-font);
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--background);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+button,
+input,
+select {
+  font-size: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.icon-button,
+.button {
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 140ms ease, color 140ms ease, transform 140ms ease;
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+}
+
+.icon-button:hover,
+.button.secondary:hover {
+  background: var(--surface-hover);
+}
+
+.icon-button:active,
+.button:active {
+  transform: translateY(1px);
+}
+
+.button {
+  min-height: 32px;
+  padding: 0 11px;
+  font-weight: 600;
+}
+
+.button.primary {
+  color: var(--primary-text);
+  background: var(--primary);
+}
+
+.button.secondary {
+  background: var(--surface-muted);
+}
+
+.button.danger {
+  color: var(--danger);
+  background: transparent;
+}
+
+.button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.field {
+  width: 100%;
+  height: 32px;
+  min-width: 0;
+  padding: 0 11px;
+  color: var(--text);
+  background: var(--surface-muted);
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+.field:hover {
+  border-color: var(--border);
+}
+
+.field.invalid {
+  border-color: var(--danger);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.switch-track {
+  position: relative;
+  width: 28px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  transition: background-color 150ms ease;
+}
+
+.switch-track::after {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  content: "";
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 150ms ease;
+}
+
+.switch input:checked + .switch-track {
+  background: var(--accent);
+}
+
+.switch input:checked + .switch-track::after {
+  transform: translateX(12px);
+}
+
+.switch input:focus-visible + .switch-track {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

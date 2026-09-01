@@ -5,6 +5,7 @@ export const HEADER_NAME_PATTERN = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+$/;
 export const DOMAIN_PATTERN = /^[A-Za-z0-9*_](?:[A-Za-z0-9*_.-]{0,251}[A-Za-z0-9*_])?$/;
 
 const MODIFY_RULE_ID = 1;
+const MAIN_FRAME_MODIFY_RULE_ID = 2;
 const IGNORE_RULE_ID_START = 1000;
 
 export function isValidDomainPattern(value) {
@@ -64,6 +65,18 @@ export function buildDynamicRules(config) {
         regexFilter: "^https?://"
       }
     });
+    rules.push({
+      id: MAIN_FRAME_MODIFY_RULE_ID,
+      priority: 1,
+      action: {
+        type: "modifyHeaders",
+        requestHeaders
+      },
+      condition: {
+        regexFilter: "^https?://",
+        resourceTypes: ["main_frame"]
+      }
+    });
   }
 
   config.ignoredDomains.forEach((rawPattern, index) => {
@@ -73,12 +86,22 @@ export function buildDynamicRules(config) {
       errors.push(t("invalidIgnoredDomain", [pattern]));
       return;
     }
+    const ruleId = IGNORE_RULE_ID_START + index * 2;
     rules.push({
-      id: IGNORE_RULE_ID_START + index,
+      id: ruleId,
       priority: 2,
       action: { type: "allow" },
       condition: {
         regexFilter: domainPatternToRegex(pattern)
+      }
+    });
+    rules.push({
+      id: ruleId + 1,
+      priority: 2,
+      action: { type: "allow" },
+      condition: {
+        regexFilter: domainPatternToRegex(pattern),
+        resourceTypes: ["main_frame"]
       }
     });
   });
